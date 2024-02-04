@@ -1,8 +1,22 @@
 public class MyCar
-{
-    private int odometer = 500; // 500 miles on the dash
-    private int current_Speed = 0; //Speed: Stopped
-    private int current_Gear = 0; //Gear: Neutral  
+    {
+    private int odometer; //Declaring variables in the classes scope. Ref: in class example 1_25
+    private int current_Speed;
+    private int current_Gear;
+
+        public MyCar() //Initializing variables through default constructor. Ref: in class example 1_25
+        {
+            odometer = 0;      // 0 Miles
+            current_Speed = 0; // 0 MPH
+            current_Gear = 0;  // 0 Gear
+        }
+
+        public MyCar(int o, int cs, int cg) //Value Pass constructor
+        {
+            odometer = o;
+            current_Speed = cs;
+            current_Gear = cg;
+        }
 
         public void mutator (int o, int cs, int cg) //Mutator function to change values
         {
@@ -22,8 +36,4 @@ public class MyCar
         {
             return current_Gear; 
         }
-        public static void main(String[] args) //Required for compiling
-        {
-            System.out.println("Main Method required for Compiling");
-        }
-}
+    }
